@@ -1,0 +1,24 @@
+model:
+  type: "bert"
+  num_classes: 2
+  dropout_rate: 0.3
+
+data:
+  dataset: "sst2"
+  tokenizer: "bert-base-uncased"
+  max_length: 512
+
+training:
+  batch_size: 16
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  epochs: 10
+  patience: 3
+  min_delta: 0.001
+  checkpoint_dir: "./checkpoints/bert_sst2"
+  results_dir: "./results/bert_sst2"
+
+logging:
+  use_wandb: false
+  project_name: "cs224n-sentiment-analysis"
+  log_interval: 100 
